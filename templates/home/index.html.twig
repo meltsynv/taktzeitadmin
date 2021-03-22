@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Taktzeit{% endblock %}
+
+{% block body %}
+    <style>
+
+    </style>
+
+    <div class="d-flex justify-content-center mt-5">
+        <div class="text-center">
+            <img class="" src="{{ asset('assets/images/TZ_logo.png') }}" alt="Taktzeit Logo" width="288" height="60">
+            <h1>Herzlich willkommen</h1>
+            <a href="{{ path('app_login') }}" class="btn btn-primary">Anmelden</a>
+        </div>
+    </div>
+{% endblock %}

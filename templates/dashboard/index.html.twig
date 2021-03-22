@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+    <style>
+
+    </style>
+    <div class="container-sm mt-5">
+        {% if admin %}
+            <div class="d-flex justify-content-between">
+                <div>
+                    <h1>{{ admin.firstName }}</h1>
+                </div>
+                <div>
+                    <a href="{{ path('app_logout') }}" class="btn btn-secondary">logout</a>
+                </div>
+            </div>
+        {% endif %}
+        {% if users %}
+            <table id="articles" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>First name</th>
+                    <th>Email</th>
+                    <th class="d-flex justify-content-end">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for user in users %}
+                    {% if user.firstName != "admin" %}
+                        <tr>
+                            <td>{{ user.firstName }}</td>
+                            <td>{{ user.email }}</td>
+                            <td class="d-flex justify-content-end">
+                                <a href="{{ path('delete_user', {'id': user.id}) }}"
+                                   class="btn btn-danger delete-article" data-id="{{ user.id }}">Delete</a>
+                            </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No users to display</p>
+        {% endif %}
+    </div>
+{% endblock %}
