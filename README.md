@@ -20,3 +20,12 @@ git add
 git commit -m "youre commit text"
 git push
 ```
+
+**Generate user and admin**
+```
+.env [connect to ure database]
+php bin/console doctrine:database:create
+
+DataFixtures/AppFixtures.php [uncomment relevant part and run comand:]
+php bin/console doctrine:fixtures:load --append
+```
