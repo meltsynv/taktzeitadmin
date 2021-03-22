@@ -1,5 +1,5 @@
 # taktzeitadmin
-**Symfony version 4.4**
+**Symfony Version 4.4**
 
 **Installation**
 ```
